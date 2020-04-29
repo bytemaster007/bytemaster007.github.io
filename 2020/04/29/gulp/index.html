@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>gulp | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="gulpgulp 是一个前端自动化打包构建工具 一个项目在上线之前，要把文件里面的所有空格换行，包括一些不必要的内容去掉 es6 语法兼容性不好 上线之前，要把 es6 的代码转换成 es5 的语法 …   目前市场上常见的打包工具 gulp 用的比较多的 是 3.9.1 gulp 4.x.x  19年年初出的   webpack webpack 3.x.x webpack 4.x.x    都是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp">
+<meta property="og:url" content="http://yoursite.com/2020/04/29/gulp/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="gulpgulp 是一个前端自动化打包构建工具 一个项目在上线之前，要把文件里面的所有空格换行，包括一些不必要的内容去掉 es6 语法兼容性不好 上线之前，要把 es6 的代码转换成 es5 的语法 …   目前市场上常见的打包工具 gulp 用的比较多的 是 3.9.1 gulp 4.x.x  19年年初出的   webpack webpack 3.x.x webpack 4.x.x    都是">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-29T14:03:44.032Z">
+<meta property="article:modified_time" content="2020-04-19T12:11:27.939Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/29/gulp/" class="article-date">
+  <time datetime="2020-04-29T14:03:44.032Z" itemprop="datePublished">2020-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h1><h3 id="gulp-1"><a href="#gulp-1" class="headerlink" title="gulp"></a>gulp</h3><ul>
+<li>是一个前端自动化打包构建工具</li>
+<li>一个项目在上线之前，要把文件里面的所有空格换行，包括一些不必要的内容去掉<ul>
+<li>es6 语法兼容性不好</li>
+<li>上线之前，要把 es6 的代码转换成 es5 的语法</li>
+<li>…</li>
+</ul>
+</li>
+<li>目前市场上常见的打包工具<ul>
+<li>gulp<ul>
+<li>用的比较多的 是 3.9.1</li>
+<li>gulp 4.x.x  19年年初出的</li>
+</ul>
+</li>
+<li>webpack<ul>
+<li>webpack 3.x.x</li>
+<li>webpack 4.x.x </li>
+</ul>
+</li>
+<li>都是对项目进行打包构建</li>
+<li>都是基于 node 运行环境</li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-安装"><a href="#gulp-安装" class="headerlink" title="gulp 安装"></a>gulp 安装</h3><ul>
+<li>gulp 安装<ul>
+<li>使用 npm 安装一个全局包就可以了<ul>
+<li><code>npm i -g gulp</code></li>
+</ul>
+</li>
+<li>全局 gulp 只是让你电脑有一个环境<ul>
+<li>可以运行 gulp 指令</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>gulp 安装检测<ul>
+<li>在命令行使用指令检测<ul>
+<li>4 以前安装的什么版本就出什么版本号</li>
+<li>4 以后出现的是 cli 版本</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-使用-前准备"><a href="#gulp-使用-前准备" class="headerlink" title="gulp 使用 前准备"></a>gulp 使用 前准备</h3><ul>
+<li>是对你的项目进行打包</li>
+<li>你要有一个项目<ul>
+<li>包含一个开发文件</li>
+<li>包含一个生产文件</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>建立项目文件夹<ul>
+<li>项目名 gulp_test</li>
+</ul>
+</li>
+<li>npm 初始化<ul>
+<li>因为要用 package.json 记录一下我的项目依赖</li>
+</ul>
+</li>
+<li>建立我的源文件文件夹<ul>
+<li>src 目录是源码</li>
+<li>gulpfile.js 文件<ul>
+<li>这个文件里面就来书写一些配置项<ul>
+<li>怎么打包</li>
+</ul>
+</li>
+<li>这个文件名不能变</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="gulp-使用前掌握"><a href="#gulp-使用前掌握" class="headerlink" title="gulp 使用前掌握"></a>gulp 使用前掌握</h3><ul>
+<li><p>每一个项目都是独立打包的项目</p>
+<ul>
+<li>一个项目一个 gulpfile.js 文件</li>
+</ul>
+</li>
+<li><p>我们使用gulp的一些功能</p>
+<ul>
+<li>需要一个第三方模块</li>
+<li>这个第三方模块叫做 <code>gulp</code></li>
+<li>下载 gulp 项目依赖<ul>
+<li><code>npm i gulp</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>下载依赖</p>
+<ul>
+<li>分两种<ul>
+<li>一种是项目依赖/生产依赖<ul>
+<li>平常开发需要用到的包</li>
+<li>jquery…</li>
+</ul>
+</li>
+<li>一种是开发依赖<ul>
+<li>devDependencies</li>
+<li>只用于开发环境，不用于生产环境，项目上线的时候就不需要开发依赖了</li>
+<li>打包工具、单元测试之类的都是开发依赖</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>下载的时候分两种形式下载<ul>
+<li>开发依赖直接下载</li>
+<li>项目依赖 加   –save-dev<ul>
+<li>简写 加 -D</li>
+</ul>
+</li>
+<li>在 package.json 里面在不同的位置记录</li>
+</ul>
+</li>
+<li>两种下载方式，只是在 package.json 里面记录的位置不一样<ul>
+<li>为了更直观的看到什么依赖是干什么用的</li>
+<li>别的没区别</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>直接在 gulpfile.js 文件里面导入</p>
+<ul>
+<li>第三方模块在导入的时候</li>
+<li>直接 require(第三方包名)</li>
+</ul>
+</li>
+<li><p>gulp的工作流程</p>
+<ul>
+<li>gulp 是一个基于任务的工作流程</li>
+<li>我要创建一个 css 的任务<ul>
+<li>这个任务就来帮我打包 css 文件</li>
+<li>当我执行这个 css 任务的时候，就会把我的 css 文件给打包了</li>
+<li>我们主要要做的事就是创建任务，让这些任务分别去干什么</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gulp 常用 API</p>
+<ul>
+<li>gulp.src()<ul>
+<li>用来找到文件</li>
+<li>src(‘a/b/c.css’)  // 准确找到一个文件</li>
+<li>src(‘a/b/**’)    // 找到一个文件夹里面的所有文件</li>
+<li>src(‘a/b/*.css’) // 找打一个文件夹里面的所有 css 文件</li>
+<li><code>src(&#39;a/b/**/*.css&#39;)</code> // 找到一个目录下所有目录里面的css文件</li>
+</ul>
+</li>
+<li>gulp.pipe()<ul>
+<li>就是用来帮你做事的</li>
+<li>也叫做管道函数</li>
+<li>pipe()的参数就是你要做的事情</li>
+<li>一个pipe 函数只能做一个事情</li>
+</ul>
+</li>
+<li>gulp.dest()<ul>
+<li>放置文件的</li>
+<li>他也是一个事情</li>
+<li>使用的时候要在 pipe 里面使用<ul>
+<li>gulp.pipe(gulp.dest())</li>
+</ul>
+</li>
+<li>参数就是你要放置这个文件的 目录地址</li>
+</ul>
+</li>
+<li>gulp.series()<ul>
+<li>用来逐个执行任务的</li>
+<li>它里面的每一个参数就是一个任务名称</li>
+<li>它里面的多个任务会在前一个任务完成之后执行后一个任务</li>
+</ul>
+</li>
+<li>gulp.parallel()<ul>
+<li>用来并行执行任务</li>
+<li>他里面的每一个参数就是一个任务名称</li>
+<li>他里面的多个任务会同时开始执行</li>
+</ul>
+</li>
+<li>gulp.tesk()<ul>
+<li>用来创建任务的方法</li>
+<li>第一个参数： 任务名称</li>
+<li>第二个参数： 是一个函数，函数里面就是这个任务需要做的事情</li>
+</ul>
+</li>
+<li>gulp.watch()<ul>
+<li>用来监控文件的</li>
+<li>第一个参数： 文件路径</li>
+<li>第二个参数： 当文件改变的时候要执行的任务</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-任务的书写"><a href="#gulp-任务的书写" class="headerlink" title="gulp 任务的书写"></a>gulp 任务的书写</h3><ol>
+<li>使用 gulp.task() 定义一个任务<ul>
+<li>在函数内部进行打包工作</li>
+</ul>
+<ol>
+<li>找到要打包的文件</li>
+<li>使用管道函数执行任务<ul>
+<li>2.1 放到哪</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>在命令行使用指令来让这个任务执行<ul>
+<li>假设任务名是：css</li>
+<li>指令： gulp css 回车</li>
+</ul>
+</li>
+</ol>
+<h3 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h3><ul>
+<li><p>gulp-cssmin</p>
+<ul>
+<li>专门用来把 css 文件进行压缩处理的</li>
+<li>导入以后，你得到的内容就是一个函数，直接让这个函数执行就能压缩 css 文件</li>
+</ul>
+</li>
+<li><p>gulp-autoprefixer</p>
+<ul>
+<li>自动给 css 样式添加前缀，用于处理兼容</li>
+<li>导入以后得到的就是一个函数，直接让这个函数执行，就能给css添加前缀<ul>
+<li>需要一些参数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gulp-sass</p>
+<ul>
+<li>专门把 sass 文件编译成 css 文件使用的</li>
+<li>导入以后，你得到的内容就是一个函数</li>
+<li>直接调用就能进行编译了</li>
+<li>安装 gulp-sass的时候有可能失败<ul>
+<li>你先安装一个 node-sass</li>
+<li>再去安装 gulp-sass 就能成功了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gulp-uglify</p>
+<ul>
+<li>专门把 js 文件 进行压缩处理</li>
+<li>导入以后，你得到的内容就是一个函数</li>
+<li>直接调用就行</li>
+<li><strong>这个模块不认识es6/es2015</strong></li>
+</ul>
+</li>
+<li><p>gulp-babel</p>
+<ul>
+<li>专门用来把es6 转成 es5 语法使用的</li>
+<li>但是他的使用需要依赖一些别的包<ul>
+<li>需要下面两个模块 babel 8的版本才需要下面两个包<ul>
+<li>@babel/core</li>
+<li>@babel/preset-env</li>
+</ul>
+</li>
+<li>babel 8以前的下这两个<ul>
+<li>babel-core</li>
+<li>babel-preset-env</li>
+</ul>
+</li>
+<li>下载的时候需要下载三个包，使用的时候只需要导入 gulp-babel 就可以了<ul>
+<li>gulp-babel 这个包会去引用上面的两个包</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>npm i -D @babel/core @babel/preset-env</code></li>
+<li>gulp-babel 在使用的时候需要传递参数<ul>
+<li>presets:[‘@babel/env’]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gulp-htmlmin</p>
+<ul>
+<li>专门用来压缩 html 文件使用的</li>
+<li>导入以后得到的是一个函数</li>
+<li>直接调用 传递一些参数就可以了</li>
+</ul>
+</li>
+<li><p>gulp-file-include</p>
+<ul>
+<li>专门用来导入一个html 片段使用</li>
+<li>需要传递一些参数<ul>
+<li>prefix: ‘’, // 你定义的标识符<ul>
+<li>当读取 html 文件时 读取到了这个标识符，就会交给 fileinclude去解析</li>
+<li>这个标识符是自定义的</li>
+</ul>
+</li>
+<li>basepath:’’, //你存放html片段的那个路径</li>
+</ul>
+</li>
+<li>在你需要导入html 片段的文件里面进行导入<ul>
+<li>你定义的标识符include(你要导入的html片段名称)</li>
+</ul>
+</li>
+<li>当页面引入的html片段需要根据实际情况微调时<ul>
+<li>可以在html代码片段里面定义变量</li>
+<li>在引入时传入变量值来让其显示不同的内容</li>
+<li>语法：<ul>
+<li>变量： 标识符变量名</li>
+<li>引入： 你的标识符include(html片段文件名, json格式的数据)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gulp-imagemin</p>
+<ul>
+<li>专门用来压缩图片的</li>
+<li>压缩力度不会很大</li>
+<li>这个包下载很费劲（很大）</li>
+<li>使用的时候需要传递一些参数</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>del<ul>
+<li>专门用来删除文件夹的</li>
+<li>使用方式 del(你要删除的文件夹)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>gulp-webserver<ul>
+<li>专门帮我们自动打开一个浏览器</li>
+<li>打开的文件是哪个文件<ul>
+<li>打开压缩的文件</li>
+</ul>
+</li>
+<li>使用的时候需要配置一些参数</li>
+</ul>
+</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li><p>gulp 打包的时候 不会把原先已经存在的文件给清除掉，只会把新的文件添加进来</p>
+<ul>
+<li>需要定义一个清除的任务，在打包之前把先前的文件夹清除掉，再重新添加</li>
+<li><code>gulp.task(&#39;default&#39;, gulp.series(&#39;del&#39;, gulp.parallel(&#39;css&#39;, &#39;sass&#39;, &#39;js&#39;, &#39;html&#39;, &#39;image&#39;, &#39;audio&#39;, &#39;lib&#39;, &#39;data&#39;)))</code></li>
+</ul>
+</li>
+<li><p>自动打开浏览器 和 热刷新</p>
+</li>
+</ol>
+<h3 id="gulp-配置-服务器代理"><a href="#gulp-配置-服务器代理" class="headerlink" title="gulp 配置 服务器代理"></a>gulp 配置 服务器代理</h3><ul>
+<li><strong>配置跨域请求</strong><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'webserver'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp</span><br><span class="line">    .src(<span class="string">'./dist/'</span>)</span><br><span class="line">    .pipe(webserver(&#123;</span><br><span class="line">      <span class="comment">// host: 'www.mx.com',  // 你要打开的域名</span></span><br><span class="line">      host:<span class="string">'127.0.0.1'</span>,</span><br><span class="line">      port: <span class="string">'8001'</span>,  <span class="comment">// 你要打开的端口号</span></span><br><span class="line">      open: <span class="string">'./pages/index.html'</span>,  <span class="comment">//你漠然打开哪个文件</span></span><br><span class="line">      livereload: <span class="literal">true</span>, <span class="comment">//自动刷新</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 配置代理</span></span><br><span class="line">      proxies:[ <span class="comment">// 所有的代理配置都在这</span></span><br><span class="line">        <span class="comment">// 这个里面的每一个对象就是你的一个代理设置</span></span><br><span class="line">        &#123;</span><br><span class="line">          source: <span class="string">'/list'</span>, <span class="comment">// 你请求的时候的代理标识符</span></span><br><span class="line">          target: <span class="string">'http://localhost/test/test.php'</span>, <span class="comment">//你请求的代理地址</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/29/gulp/" data-id="ck9lfzhac00022ont10uddxfn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的第一篇博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/29/gulp/">gulp</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
